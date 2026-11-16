@@ -1,4 +1,4 @@
-"""Moon Fishing -- make.fun ai-excited-01 entry.
+"""Bow to the Stars -- make.fun ai-excited-01 entry.
 
 This program copies the bundled picture to the grader's output
 directory. The picture lives next to this file as entry.png. The grader
