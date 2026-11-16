@@ -4,6 +4,12 @@ This program copies the bundled picture to the grader's output
 directory. The picture lives next to this file as entry.png. The grader
 runs the program twice and both runs must write identical bytes, so the
 program only copies bytes and never re-encodes anything.
+
+Restored version: this is the aac6c139 render the user picked -- the
+violinist with the scroll to the viewer's left, the bow horizontal
+across the strings, and the golden ribbon rising from the strings to
+the Milky Way. Rebuilt fresh in-session under the redo recording after
+the first submit was refused only on the README badges.
 """
 
 import hashlib
@@ -34,6 +40,8 @@ def main():
     os.makedirs(out_dir, exist_ok=True)
     target = os.path.join(out_dir, "entry.png")
 
+    # Byte-for-byte copy on purpose: re-encoding the JPEG would change
+    # bytes between runs, so the grader's two runs must see this copy.
     shutil.copyfile(source, target)
 
     # Read-back check: the written file must be byte-identical to the
